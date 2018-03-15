@@ -1,0 +1,23 @@
+<html>
+<body>
+<script src="http://lig-membres.imag.fr/donsez/cours/exemplescourstechnoweb/js_securehash/md5.js"></script>
+<script>
+function myfunction(){
+	
+	var message=document.getElementById("psw").value;
+	var hash = calcMD5(message);
+	document.getElementById("psw").value=hash;
+	alert(hash);
+}
+</script>
+
+<form name="f1">
+	<input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Password" name="Hello" id="psw" required>
+        
+    <input type="submit" onclick="myfunction()">
+	<p id="temp"></p>
+</form>
+
+</body>
+</html>
