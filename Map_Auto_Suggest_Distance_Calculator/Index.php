@@ -60,7 +60,7 @@
 					),
 				);  
 				$origin = str_replace(" ", "%20",$_POST['o']); $destination = str_replace(" ", "%20",$_POST['d']);
-				$api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$origin."&destinations=".$destination."&key=AIzaSyAfJA2iibIYzn6wQvQckp7gxXT_l9TWKg8",false,stream_context_create($arrContextOptions));
+				$api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$origin."&destinations=".$destination."&key=ApiKey",false,stream_context_create($arrContextOptions));
 				$data = json_decode($api);
         ?>
             <label><b>Distance: </b></label> <span><?php echo ((int)$data->rows[0]->elements[0]->distance->value / 1000).' Km'; ?></span> <br><br>
